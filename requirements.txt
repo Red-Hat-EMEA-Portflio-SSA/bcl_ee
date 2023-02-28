@@ -1,0 +1,6 @@
+hpICsp
+hpeOneView
+python-hpilo
+python-ilorest-library
+psutil
+aiohttp
