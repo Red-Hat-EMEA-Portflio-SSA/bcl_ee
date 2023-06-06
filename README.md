@@ -11,7 +11,6 @@
 
 # and pushed to private automation hub
  podman login --tls-verify=false aap-privhub.bcl.redhat.hpecic.com
-Username: admin
-Password:
-Login Succeeded!
+ Username: admin
+
  podman push --tls-verify=false bcl-ov:3 aap-privhub.bcl.redhat.hpecic.com/bcl-ov:latest
