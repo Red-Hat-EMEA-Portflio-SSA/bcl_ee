@@ -1,26 +1,60 @@
 ---
 collections:
-  - name: hpe.oneview
-  - name: community.general
-    version: 6.1.0
-  - name: vmware.vmware_rest
   - name: ansible.controller
-    version: 4.1.2
+    version: 4.3.0
+  - name: ansible.posix
+    version: 1.5.1
+  - name: ansible.windows
+    version: 1.13.0
+  - name: ansible_ssa.general
+    source: 'https://gitlab.com/ansible-ssa/collection-ansible_ssa-general/-/raw/release/ansible_ssa-general-4.8.0+1.tar.gz?inline=false'
+    type: url
+#  - name: ansible_ssa.windows
+#    source: https://gitlab.com/ansible-ssa/collection-ansible_ssa-windows.git
+#    type: git
+  - name: chocolatey.chocolatey
+    version: 1.4.0
+  - name: community.crypto
+    version: 2.11.0
+  - name: community.general
+    version: 6.4.0
+  - name: community.mysql
+    version: 3.6.0
+  - name: community.vmware
+    version: 3.5.0
+#    version: 3.2.0
+  - name: vmware.vmware_rest
+    version: 2.3.1
+  - name: community.windows
+    version: 1.12.0
+  - name: containers.podman
+    version: 1.10.1
+#  - name: kubernetes.core
+#    version: 2.4.0
+  - name: redhat.rhel_system_roles
+    version: 1.16.2
+
+  - name: hpe.oneview
+  - name: ansible.utils
+#    version: 2.9.0
+#    version: 2.6.1
+  - name:  mschreie.bcl
+    source: https://github.com/mschreie/collection_mschreie_bcl.git
+    type: git
+  - name: mschreie.resolver
+    source: https://github.com/mschreie/collection_mschreie_resolver.git
+    type: git
+  - name: mschreie.nsupdate
+    source: https://github.com/mschreie/collection_mschreie_nsupdate.git
+    type: git
+
 #  - name: ansible.netcommon
 #    version: 3.1.1
 #  - name: ansible.network
 #    version: 1.2.0
-  - name: ansible.posix
-    version: 1.4.0
 #  - name: ansible.security
 #    version: 1.0.0
-  - name: ansible.utils
-    version: 2.6.1
 #  - name: ansible.windows
 #    version: 1.12.0
 #  - name: ansible.yang
 #    version: 1.0.0
-#  - name: redhat.rhel_system_roles
-#    version: 1.16.2
-  - name: community.vmware
-    version: 3.2.0

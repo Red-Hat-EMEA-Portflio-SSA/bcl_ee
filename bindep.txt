@@ -1,0 +1,3 @@
+bind-utils [platform:rpm]
+skopeo [platform:rpm]
+which [platform:rpm]

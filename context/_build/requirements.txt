@@ -1,8 +1,0 @@
-hpICsp
-hpeOneView
-python-hpilo
-python-ilorest-library
-psutil
-aiohttp
-requests
-git+https://github.com/vmware/vsphere-automation-sdk-python.git
