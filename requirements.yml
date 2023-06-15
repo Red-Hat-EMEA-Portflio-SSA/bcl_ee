@@ -38,14 +38,14 @@ collections:
   - name: ansible.utils
 #    version: 2.9.0
 #    version: 2.6.1
-  - name:  mschreie.bcl
-    source: https://github.com/mschreie/collection_mschreie_bcl.git
+  - name:  portfoliossa.bcl
+    source: https://github.com/Red-Hat-EMEA-Portflio-SSA/collection_portfoliossa_bcl.git
     type: git
-  - name: mschreie.resolver
-    source: https://github.com/mschreie/collection_mschreie_resolver.git
+  - name: portfoliossa.resolver
+    source: https://github.com/Red-Hat-EMEA-Portflio-SSA/collection_portfoliossa_resolver.git
     type: git
-  - name: mschreie.nsupdate
-    source: https://github.com/mschreie/collection_mschreie_nsupdate.git
+  - name: portfoliossa.nsupdate
+    source: https://github.com/Red-Hat-EMEA-Portflio-SSA/collection_portfoliossa_nsupdate.git
     type: git
 
 #  - name: ansible.netcommon
