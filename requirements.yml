@@ -39,13 +39,13 @@ collections:
 #    version: 2.9.0
 #    version: 2.6.1
   - name:  portfoliossa.bcl
-    source: https://github.com/Red-Hat-EMEA-Portflio-SSA/collection_portfoliossa_bcl.git
+    source: https://github.com/Red-Hat-EMEA-Portfolio-SSA/collection_portfoliossa_bcl.git
     type: git
   - name: portfoliossa.resolver
-    source: https://github.com/Red-Hat-EMEA-Portflio-SSA/collection_portfoliossa_resolver.git
+    source: https://github.com/Red-Hat-EMEA-Portfolio-SSA/collection_portfoliossa_resolver.git
     type: git
   - name: portfoliossa.nsupdate
-    source: https://github.com/Red-Hat-EMEA-Portflio-SSA/collection_portfoliossa_nsupdate.git
+    source: https://github.com/Red-Hat-EMEA-Portfolio-SSA/collection_portfoliossa_nsupdate.git
     type: git
 
 #  - name: ansible.netcommon
