@@ -21,7 +21,7 @@ collections:
   - name: community.mysql
     version: 3.6.0
   - name: community.vmware
-    version: 3.5.0
+    version: 3.8.0
 #    version: 3.2.0
   - name: vmware.vmware_rest
     version: 2.3.1
