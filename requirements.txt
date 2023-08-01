@@ -5,4 +5,5 @@ python-ilorest-library
 psutil
 aiohttp
 requests
+jmespath
 git+https://github.com/vmware/vsphere-automation-sdk-python.git
