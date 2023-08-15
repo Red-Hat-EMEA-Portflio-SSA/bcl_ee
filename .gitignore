@@ -1,2 +1,4 @@
 context/
-
+vsan-sdk-python.zip
+*.log
+.vscode
