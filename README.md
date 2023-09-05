@@ -35,10 +35,10 @@ First thing you need to do is dowload the "vsan-sdk-python.zip" [from VMware sit
 Once you have it there you need to execute ansible-builder with the schema version 3 file:
 
 ```
-ansible-builder build -v 3 -t bcl-ov:14 -f ee-schema-v3.yml
+ansible-builder build -v 3 -t bcl-ov:15 -f ee-schema-v3.yml
 ```
 
 Then push it the same way we did before:
 ```
-podman push bcl-ov:14 quay.io/mschreie/bcl-ov:14
+podman push bcl-ov:15 quay.io/mschreie/bcl-ov:14
 ```
