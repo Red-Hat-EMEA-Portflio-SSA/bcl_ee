@@ -15,6 +15,7 @@
 # and pushed to quay.io
  ```
  podman push bcl-ov:4 quay.io/mschreie/bcl-ov:4
+ podman push bcl-ov:4 quay.io/mschreie/bcl-ov:latest
  ```
 
 # and pushed to private automation hub
@@ -28,7 +29,7 @@
 
 # Version 14 and above > Including vSAN management 
 
-For using the modules that manage vSAN with the community.vmware collection you need to include the vSAN Management python SDK. This SDK is provided and managed by VMware in a way that cannot just be included in the requirements.txt file. Here I explain how to include it in your execution environment to build version 14 of bcl_ee and above.
+For using the modules that manage vSAN with the community.vmware collection you nepodman push bcl-ov:4 quay.io/mschreie/bcl-ov:ed to include the vSAN Management python SDK. This SDK is provided and managed by VMware in a way that cannot just be included in the requirements.txt file. Here I explain how to include it in your execution environment to build version 14 of bcl_ee and above.
 
 First thing you need to do is dowload the "vsan-sdk-python.zip" [from VMware site](https://developer.vmware.com/web/sdk/7.0%20U2/vsan-python) and place the file in the directory of this repo: /your-path/bcl_ee/vsan-sdk-python.zip
 
