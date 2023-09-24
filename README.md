@@ -15,7 +15,7 @@ Login to quay and RH registry to download things needed
  ```
 Build a new execution environment
  ```
- ansible-builder build -v 3 -t bcl-ov:${eev} -f execution-environment.yml
+ ansible-builder build -v 3 -t bcl-ov:${eev} -f execution-environment.yml --prune-images
  ```
 
 # Version 14 and above > Including vSAN management 
@@ -27,7 +27,7 @@ First thing you need to do is dowload the "vsan-sdk-python.zip" [from VMware sit
 Once you have it there you need to execute ansible-builder with the schema version 3 file:
 
 ```
-ansible-builder build -v 3 -t bcl-ov:${eev} -f ee-schema-v3.yml
+ansible-builder build -v 3 -t bcl-ov:${eev} -f ee-schema-v3.yml --prune-images
 ```
 
 Then follow the next steps (pushing it everywhere needed)
