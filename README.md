@@ -1,30 +1,21 @@
 # bcl_ee
 # The execution environment needed to set up the BCL demo in the CIC
 # here are the steps to
+
+Set the version in a variable to allow cut and past in the following
+ ```
+ export eev=15
+ ```
+Login to quay and RH registry to download things needed
  ```
  podman login quay.io
  ```
  ```
  podman login registry.redhat.io
  ```
+Build a new execution environment
  ```
- ansible-builder build -v 3 -t bcl-ov:4 -f execution-environment.yml
- ```
-
-
-# and pushed to quay.io
- ```
- podman push bcl-ov:4 quay.io/mschreie/bcl-ov:4
- podman push bcl-ov:4 quay.io/mschreie/bcl-ov:latest
- ```
-
-# and pushed to private automation hub
- ```
- podman login --tls-verify=false aap-privhub.bcl.redhat.hpecic.com
- Username: admin
-```
-```
- podman push --tls-verify=false bcl-ov:4 aap-privhub.bcl.redhat.hpecic.com/bcl-ov:latest
+ ansible-builder build -v 3 -t bcl-ov:${eev} -f execution-environment.yml
  ```
 
 # Version 14 and above > Including vSAN management 
@@ -36,10 +27,23 @@ First thing you need to do is dowload the "vsan-sdk-python.zip" [from VMware sit
 Once you have it there you need to execute ansible-builder with the schema version 3 file:
 
 ```
-ansible-builder build -v 3 -t bcl-ov:15 -f ee-schema-v3.yml
+ansible-builder build -v 3 -t bcl-ov:${eev} -f ee-schema-v3.yml
 ```
 
-Then push it the same way we did before:
+Then follow the next steps (pushing it everywhere needed)
+
+# and push to quay.io
+ ```
+ podman push bcl-ov:${eev} quay.io/mschreie/bcl-ov:${eev}
+ podman push bcl-ov:${eev} quay.io/mschreie/bcl-ov:latest
+ ```
+
+# and push to private automation hub
+ ```
+ podman login --tls-verify=false aap-privhub.bcl.redhat.hpecic.com
+ Username: admin
 ```
-podman push bcl-ov:15 quay.io/mschreie/bcl-ov:14
 ```
+ podman push --tls-verify=false bcl-ov:${eev} aap-privhub.bcl.redhat.hpecic.com/bcl-ov:${eev}
+ podman push --tls-verify=false bcl-ov:${eev} aap-privhub.bcl.redhat.hpecic.com/bcl-ov:latest
+ ```
