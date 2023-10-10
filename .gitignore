@@ -1,6 +1,6 @@
 context/
 vsan-sdk-python.zip
 *.log
+*.out
 .vscode
 ansible.cfg
-
