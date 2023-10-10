@@ -3,6 +3,10 @@
 # here are the steps to
 
 Set the version in a variable to allow cut and past in the following
+Convention: 
+   use a "n" behind your version number to emphasis it is has NO vsan modules included.
+   use "vsan" behind your version number to emphasis it is has vsan modules included.
+
  ```
  export eev=15
  ```
@@ -13,7 +17,19 @@ Login to quay and RH registry to download things needed
  ```
  podman login registry.redhat.io
  ```
-Build a new execution environment
+Optional:
+The build process is long lasting and has a long output. IF you want to review output later you might want to capture it. One option is via tmux
+Start tmux:
+ ```
+ tmux
+ ```
+Start logging within tmux
+ ```
+ ctrl-b :
+ pipe-pane -o 'cat >>~/tmux_output.#S:#I-#P'
+ ```
+
+Build a new execution environment 
  ```
  ansible-builder build -v 3 -t bcl-ov:${eev} -f execution-environment.yml --prune-images
  ```
