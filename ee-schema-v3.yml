@@ -5,10 +5,14 @@ dependencies:
   galaxy: requirements.yml
   python: requirements.txt
   system: bindep.txt
+  python_interpreter:
+        package_system: "python39"
+        python_path: "/usr/bin/python3.9"
 
 images:
   base_image:
-    name: registry.redhat.io/ansible-automation-platform-23/ee-minimal-rhel8:1.0.0-294
+    #name: registry.redhat.io/ansible-automation-platform-23/ee-minimal-rhel8:1.0.0-294
+    name: registry.redhat.io/ansible-automation-platform-23/ee-minimal-rhel8:1.0.0-422
 
 options:
   package_manager_path: /usr/bin/microdnf
