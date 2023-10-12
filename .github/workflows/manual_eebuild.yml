@@ -20,8 +20,6 @@ jobs:
       - uses: actions/checkout@v4
       - name: install ansible-builder
         run: pip install ansible-builder
-      - name: show what we downloaded
-        run: find .
       - name: pull ansible.cfg from private repo
         env: 
           TKN: ${{ secrets.MSCHREIE_GITHUB_PAT }}
@@ -30,6 +28,10 @@ jobs:
         env: 
           TKN: ${{ secrets.MSCHREIE_GITHUB_PAT }}
         run: 'curl -H "Authorization: token $TKN" -H "Accept: application/vnd.github.v3.raw" -o  vsan-sdk-python.zip -L https://raw.githubusercontent.com/mschreie/bcl_ee_private_files/main/vsan-sdk-python.zip'
+
+      - name: "debug: show what we have in the directory"
+        run: find . -exec ls -ld {} \;
+
       - name: login to registry.redhat.io
         env: 
           USER: ${{ secrets.REGISTRY_REDHAT_IO_USER }}
