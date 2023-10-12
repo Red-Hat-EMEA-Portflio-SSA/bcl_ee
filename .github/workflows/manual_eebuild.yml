@@ -30,6 +30,21 @@ jobs:
         env: 
           TKN: ${{ secrets.MSCHREIE_GITHUB_PAT }}
         run: 'curl -H "Authorization: token $TKN" -H "Accept: application/vnd.github.v3.raw" -o  vsan-sdk-python.zip -L https://raw.githubusercontent.com/mschreie/bcl_ee_private_files/main/vsan-sdk-python.zip'
+      - name: login to registry.redhat.io
+        env: 
+          USER: ${{ secrets.REGISTRY_REDHAT_IO_USER }}
+          PASSWORD: ${{ secrets.REGISTRY_REDHAT_IO_PASSWORD }}
+        run: echo $PASSWORD | podman login --username $USER --password-stdin registry.redhat.io
+
+      - name: login to quay.io
+        env: 
+          USER: ${{ secrets.QUAY_IO_USER }}
+          PASSWORD: ${{ secrets.QUAY_IO_PASSWORD }}
+        run: echo $PASSWORD | podman login --username $USER --password-stdin quay.io
+        
       - name: build image without vsan sdk
         run: ansible-builder build -v 3 -t bcl-ov:${{ inputs.eev }}n -f execution-environment.yml --prune-images
       ## - push the image (multiple times)
+
+      - name: push image to quay.io
+        run: podman push bcl-ov:${inputs.eev} quay.io/mschreie/bcl-ov:${eev}
