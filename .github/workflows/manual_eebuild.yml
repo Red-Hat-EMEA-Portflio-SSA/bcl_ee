@@ -18,9 +18,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: isntall ansible-builder
+      - name: install ansible-builder
         run: pip install ansible-builder
-      ## - pull vsan sdk from private repo
-      - name: buld image
-        run: ansible-builder build -v 3 -t bcl-ov:${inputs.eev} -f execution-environment.yml --prune-images
+      - name: show what we downloaded
+        run: find .
+      - name: pull ansible.cfg from private repo
+        env: 
+          TKN: ${{ secrets.MSCHREIE_GITHUB_PAT }}
+        run: curl -H "Authorization: token $TKN" -H 'Accept: application/vnd.github.v3.raw' -o  ansible.cfg -sdk-python.zip -L https://raw.githubusercontent.com/mschreie/bcl_ee_private_files/main/ansible.cfg
+      - name: pull vsan sdk from private repo
+        env: 
+          TKN: ${{ secrets.MSCHREIE_GITHUB_PAT }}
+        run: curl -H "Authorization: token $TKN" -H 'Accept: application/vnd.github.v3.raw' -o  vsan-sdk-python.zip -L https://raw.githubusercontent.com/mschreie/bcl_ee_private_files/main/vsan-sdk-python.zip
+      - name: build image without vsan sdk
+        run: ansible-builder build -v 3 -t bcl-ov:${{ inputs.eev }}n -f execution-environment.yml --prune-images
       ## - push the image (multiple times)
