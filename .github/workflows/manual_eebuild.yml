@@ -23,7 +23,7 @@ jobs:
       - name: pull ansible.cfg from private repo
         env: 
           TKN: ${{ secrets.MSCHREIE_GITHUB_PAT }}
-        run: 'curl -H "Authorization: token $TKN" -H "Accept: application/vnd.github.v3.raw" -o  ansible.cfg -sdk-python.zip -L https://raw.githubusercontent.com/mschreie/bcl_ee_private_files/main/ansible.cfg'
+        run: 'curl -H "Authorization: token $TKN" -H "Accept: application/vnd.github.v3.raw" -o  ansible.cfg -L https://raw.githubusercontent.com/mschreie/bcl_ee_private_files/main/ansible.cfg'
       - name: pull vsan sdk from private repo
         env: 
           TKN: ${{ secrets.MSCHREIE_GITHUB_PAT }}
