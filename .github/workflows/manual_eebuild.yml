@@ -46,7 +46,12 @@ jobs:
         
       - name: build image without vsan sdk
         run: ansible-builder build -v 3 -t bcl-ov:${{ inputs.eev }}n -f execution-environment.yml --prune-images
-      ## - push the image (multiple times)
 
       - name: push image to quay.io
-        run: podman push bcl-ov:${inputs.eev} quay.io/mschreie/bcl-ov:${eev}
+        run: podman push bcl-ov:${{ inputs.eev }}n quay.io/mschreie/bcl-ov:${{ inputs.eev }}n
+        
+      - name: build image with vsan sdk
+        run: ansible-builder build -v 3 -t bcl-ov:${{ inputs.eev }}san -f ee-schema-v3.yml --prune-images
+
+      - name: push vsan-sdk image to quay.io
+        run: podman push bcl-ov:${{ inputs.eev }}san quay.io/mschreie/bcl-ov:${{ inputs.eev }}san
