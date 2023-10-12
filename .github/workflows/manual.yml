@@ -14,12 +14,6 @@ on:
         type: string
 
 jobs:
-  # This workflow contains a single job called "greet"
-  greet:
-
-    # Runs a single command using the runners shell
-    - name: Send greeting
-      run: echo "Hello ${{ inputs.name }}"
   build-ee:
     runs-on: ubuntu-latest
     steps:
