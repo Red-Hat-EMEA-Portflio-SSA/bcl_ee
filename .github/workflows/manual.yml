@@ -1,0 +1,26 @@
+# This is a basic workflow that is manually triggered
+
+name: Build an ee, triggered manually
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+  workflow_dispatch:
+    inputs:
+      eev:
+        description: 'Image version to build'
+        default: ''
+        required: true
+        type: string
+
+jobs:
+  build-ee:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: isntall ansible-builder
+        run: pip install ansible-builder
+      ## - pull vsan sdk from private repo
+      - name: build image without vsan sdk
+        run: ansible-builder build -v 3 -t bcl-ov:${{ inputs.eev }}n -f execution-environment.yml --prune-images
+      ## - push the image (multiple times)
