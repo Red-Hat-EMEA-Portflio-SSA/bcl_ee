@@ -1,7 +1,29 @@
 # bcl_ee
 # The execution environment needed to set up the BCL demo in the CIC
-# here are the steps to
+# here are the steps to create it
 
+# Using Github actions
+We created a Github action which builds the execution environment twice and pushes it into quay.io
+The build process is triggered manualy:
+
+Navigate to
+https://github.com/Red-Hat-EMEA-Portfolio-SSA/bcl_ee
+
+Click on "Actions"
+Click on "Build an ee, triggered manually" on the right hand side:
+Drop down the dropdown "Run workflow" 
+add a version number
+
+and click "Run Workflow" 
+
+Advantage of this porcess:
+* way faster than my manual build process
+* many steps combined into one!
+
+Caution: It does NOT push it into the private automation hub in the BCL environment
+
+
+# Using conventional build process
 Set the version in a variable to allow cut and past in the following
 Convention: 
    use a "n" behind your version number to emphasis it is has NO vsan modules included.
