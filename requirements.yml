@@ -6,6 +6,8 @@ collections:
     version: 1.5.1
   - name: ansible.windows
     version: 1.13.0
+  - name: infra.ah_configuration
+    version: 2.0.3
   - name: ansible_ssa.general
     source: 'https://gitlab.com/ansible-ssa/collection-ansible_ssa-general/-/raw/release/ansible_ssa-general-4.8.0+1.tar.gz?inline=false'
     type: url
